@@ -6,27 +6,21 @@ function Chai() {
     let [counter, setCounter] = useState(15);
 
     const addValue = () => {
-            counter = counter + 1;
-            console.log("incresed counter by 1:", counter);
-            if (counter >= 15) {
+            // limit counter max value to 15
+             if (counter >= 15) {
                 setCounter(15);
             } else {
                 setCounter(c => Math.max(c + 1, 0));
             }
-
-           // setCounter(counter);
     }
 
     const subtractValue = () => {
-        counter = counter - 1;
-        console.log("decreased counter by 1:", counter);
+        // limit counter min value to 0
         if (counter <= 0) {
             setCounter(0);
         } else {
             setCounter(c => Math.max(c - 1, 0));
         }
-
-        //counter < 0 ? setCounter(0) : setCounter(counter);
 }
 
 
